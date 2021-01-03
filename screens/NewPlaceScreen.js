@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
+  ScrollView,
   View,
+  Button,
   Text,
   TextInput,
-  Button,
   StyleSheet,
-  ScrollView,
 } from "react-native";
 import { useDispatch } from "react-redux";
 
@@ -23,7 +23,7 @@ const NewPlaceScreen = (props) => {
     setTitleValue(text);
   };
 
-  const imageTakeHandler = (imagePath) => {
+  const imageTakenHandler = (imagePath) => {
     setSelectedImage(imagePath);
   };
 
@@ -41,7 +41,7 @@ const NewPlaceScreen = (props) => {
           onChangeText={titleChangeHandler}
           value={titleValue}
         />
-        <ImagePicker onImagePicker={imageTakeHandler} />
+        <ImagePicker onImageTaken={imageTakenHandler} />
         <Button
           title="Save Place"
           color={Colors.primary}
